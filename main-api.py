@@ -1,18 +1,17 @@
 import csv
 import configparser
 import os
-# print(os.getcwd())
-# exit(0)
 
 import requests
 
-# Setup configuration path.
+# Setup configuration path AND target path.
 root_path = os.getcwd()
 config_path = f"{root_path}\env_conf"
 pipeline_config_path = f"{config_path}\pipeline.conf"
-# print(config_path)
-# print(pipeline_config_path)
-# exit(0)
+
+DATA_FOLDER = "data"
+if not os.path.exists(f"{root_path}\{DATA_FOLDER}"):
+    os.mkdir(f"{root_path}\{DATA_FOLDER}")
 
 # create configObject to read configuration from pipeline.conf file
 config = configparser.ConfigParser()
@@ -22,11 +21,7 @@ port = config.get("api_config", "port")
 
 API_URL = f"http://{host}:{port}"
 
-# print(API_URL)
-
-DATA_FOLDER = "data"
 table_list = ["addresses", "events", "order-items", "orders", "products", "promos", "users"]
-# table_list = ["addresses", "events"]
 
 for tbl in table_list:
     # print(f"{API_URL}/{tbl}")

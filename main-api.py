@@ -17,8 +17,6 @@ DATA_FOLDER = "data"
 table_list = ["addresses", "events", "order-items", "orders", "products", "promos", "users"]
 # table_list = ["addresses", "events"]
 
-
-
 for tbl in table_list:
     # print(f"{API_URL}/{tbl}")
     response = requests.get(f"{API_URL}/{tbl}")

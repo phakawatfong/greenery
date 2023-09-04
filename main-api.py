@@ -1,11 +1,22 @@
 import csv
 import configparser
+import os
+# print(os.getcwd())
+# exit(0)
 
 import requests
 
+# Setup configuration path.
+root_path = os.getcwd()
+config_path = f"{root_path}\env_conf"
+pipeline_config_path = f"{config_path}\pipeline.conf"
+# print(config_path)
+# print(pipeline_config_path)
+# exit(0)
+
 # create configObject to read configuration from pipeline.conf file
 config = configparser.ConfigParser()
-config.read("pipeline.conf")
+config.read(pipeline_config_path)
 host = config.get("api_config", "host")
 port = config.get("api_config", "port")
 

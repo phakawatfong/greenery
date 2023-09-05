@@ -7,7 +7,7 @@ from google.oauth2 import service_account
 # Setup configuration path AND target path.
 root_path = os.getcwd()
 config_path = f"{root_path}\env_conf"
-keyfile = f"{config_path}\greenery-398007-e5bfbcaa9438.json"
+keyfile = f"{config_path}\greenery-google-cloud-storage.json"
 DATA_FOLDER = f"{root_path}\data"
 BUSINESS_DOMAIN = "greenery"
 
